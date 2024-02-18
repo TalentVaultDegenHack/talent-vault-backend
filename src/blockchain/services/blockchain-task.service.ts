@@ -17,12 +17,12 @@ export class BlockchainTaskService {
     private readonly _blockchainService: BlockchainService,
   ) {}
 
-  // @Cron('45 * * * * *')
+  @Cron('45 * * * * *')
   public async deployContract() {
     await  this._blockchainService.deployContract();
   }
 
-  @Cron('* 2 * * * *')
+  // @Cron('* 10 * * * *')
   public async mintTokens() {
     const tokens = await this._repo.findBy({ isMinted: false });
     for (const token of tokens) {
