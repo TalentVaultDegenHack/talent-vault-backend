@@ -22,7 +22,7 @@ export class BlockchainTaskService {
     await this._blockchainService.deployContract();
   }
 
-  // @Cron('* 10 * * * *')
+  @Cron('* */2 * * * *')
   public async mintTokens() {
     const tokens = await this._repo.findBy({ isMinted: false });
     for (const token of tokens) {
