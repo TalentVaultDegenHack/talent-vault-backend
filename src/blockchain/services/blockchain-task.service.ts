@@ -17,9 +17,9 @@ export class BlockchainTaskService {
     private readonly _blockchainService: BlockchainService,
   ) {}
 
-  @Cron('45 * * * * *')
+  // @Cron('45 * * * * *')
   public async deployContract() {
-    await  this._blockchainService.deployContract();
+    await this._blockchainService.deployContract();
   }
 
   // @Cron('* 10 * * * *')
